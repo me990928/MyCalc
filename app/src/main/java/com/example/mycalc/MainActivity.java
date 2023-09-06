@@ -3,6 +3,8 @@ package com.example.mycalc;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,4 +22,13 @@ public class MainActivity extends AppCompatActivity {
         displayValue = findViewById(R.id.DisplayPanel);
 
     }
+
+    public void numKeyOnClick(View v){
+        String input = (String) ((Button) v).getText();
+
+        this.strTemp += input;
+
+        displayValue.setText(this.strTemp);
+    }
+
 }
