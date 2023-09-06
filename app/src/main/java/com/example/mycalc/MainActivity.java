@@ -10,6 +10,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     private String strTemp = ""; // 入力保持
+    private String work = "";
     private String display = ""; // 表示
 
     TextView displayValue;
@@ -31,4 +32,29 @@ public class MainActivity extends AppCompatActivity {
         displayValue.setText(this.strTemp);
     }
 
+    public void functionOnClick(View v){
+        String input = (String) ((Button) v).getText();
+
+        switch (input) {
+            case "AC":
+                strTemp = "";
+                work = "";
+                displayValue.setText("0");
+                break;
+            case "C":
+                strTemp = "";
+                displayValue.setText("0");
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void operatorKeyOnClick(View v){
+        String input = (String) ((Button) v).getText();
+        switch (input) {
+            default:
+                break;
+        }
+    }
 }
