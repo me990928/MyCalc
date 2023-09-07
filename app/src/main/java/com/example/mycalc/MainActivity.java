@@ -53,6 +53,21 @@ public class MainActivity extends AppCompatActivity {
             case "Past":
                 strTemp = copy;
                 displayValue.setText(strTemp);
+                break;
+            case "BS":
+                switch (strTemp){
+                    case "":
+                        displayValue.setText("0");
+                        break;
+                    default:
+                        strTemp = strTemp.substring(0, strTemp.length() -1);
+                        if (strTemp.equals("")) {
+                            displayValue.setText("0");
+                        } else {
+                            displayValue.setText(strTemp);
+                        }
+                }
+                break;
             default:
                 break;
         }
