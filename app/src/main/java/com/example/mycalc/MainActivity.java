@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
     private String strTemp = ""; // 入力保持
     private String work = "";
     private String display = ""; // 表示
+    private String copy = "";
 
     TextView displayValue;
 
@@ -44,6 +45,28 @@ public class MainActivity extends AppCompatActivity {
             case "C":
                 strTemp = "";
                 displayValue.setText("0");
+                break;
+            case "Copy":
+                copy = strTemp;
+                ((Button) v).setText("Past");
+                break;
+            case "Past":
+                strTemp = copy;
+                displayValue.setText(strTemp);
+                break;
+            case "BS":
+                switch (strTemp){
+                    case "":
+                        displayValue.setText("0");
+                        break;
+                    default:
+                        strTemp = strTemp.substring(0, strTemp.length() -1);
+                        if (strTemp.equals("")) {
+                            displayValue.setText("0");
+                        } else {
+                            displayValue.setText(strTemp);
+                        }
+                }
                 break;
             default:
                 break;
