@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@android:color/darker_gray"
     android:backgroundTint="#757575"
     android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/SubDisplayPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:background="#00FFFFFF"
+        android:gravity="right"
+        android:text="0"
+        android:textColor="@color/white"
+        android:textSize="48sp" />
 
     <TextView
         android:id="@+id/DisplayPanel"
@@ -25,6 +39,68 @@
         android:layout_height="match_parent">
 
         <TableRow
+            android:id="@+id/tableRow0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+
+            <ImageButton
+                android:id="@+id/backCalc"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/circle_layout"
+                android:onClick="onClickBack"
+                android:soundEffectsEnabled="false"
+                app:backgroundTint="#D53E98"
+                app:srcCompat="@drawable/baseline_history_40"
+                tools:ignore="SpeakableTextPresentCheck" />
+            <Button
+                android:id="@+id/bc"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:onClick="onClickBC"
+                android:text="BC"
+                android:textColor="@color/white"
+                android:textSize="21sp"
+                app:backgroundTint="#D53E98" />
+            <Button
+                android:id="@+id/theta"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:onClick="onClickTheta"
+                android:text="θ"
+                android:textColor="@color/white"
+                android:textSize="21sp"
+                app:backgroundTint="#D53E98" />
+
+            <Button
+                android:id="@+id/random"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/circle_layout"
+                android:onClick="functionOnClick"
+                app:backgroundTint="#D53E98"
+                android:text="R"
+                android:textColor="@color/white"
+                android:textSize="21sp"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+        </TableRow>
+
+        <TableRow
             android:id="@+id/tableRow1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -40,7 +116,7 @@
                 android:onClick="functionOnClick"
                 android:text="@string/copy"
                 android:textColor="@color/white"
-                android:textSize="21sp"
+                android:textSize="19sp"
                 app:backgroundTint="#D53E98" />
 
             <Button
