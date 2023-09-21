@@ -6,7 +6,9 @@
     android:background="@android:color/darker_gray"
     android:backgroundTint="#757575"
     android:orientation="vertical">
-
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <TextView
         android:id="@+id/debug"
         android:layout_width="match_parent"
@@ -18,5 +20,6 @@
         android:gravity="left"
         android:textColor="@color/white"
         android:textSize="48sp" />
+    </ScrollView>
 
 </LinearLayout>

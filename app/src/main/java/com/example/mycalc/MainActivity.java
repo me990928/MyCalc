@@ -71,15 +71,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickBC(View v){
+        String s = "";
+        if (strTemp.equals("")){
+            s = displayValue.getText().toString();
+        }else {
+            s = strTemp;
+        }
         Intent intent = new Intent(MainActivity.this, CalcBack.class);
-        intent.putExtra("calcData", strTemp);
+        intent.putExtra("calcData", s);
         intent.putExtra("mode", "bc");
         startActivity(intent);
     }
 
     public void onClickTheta(View v){
+        String s = "";
+        if (strTemp.equals("")){
+            s = displayValue.getText().toString();
+        }else {
+            s = strTemp;
+        }
         Intent intent = new Intent(MainActivity.this, CalcBack.class);
-        intent.putExtra("calcData", strTemp);
+        intent.putExtra("calcData", s);
         intent.putExtra("mode", "Theta");
         startActivity(intent);
     }
@@ -112,6 +124,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void numKeyOnClick(View v){
         String input = (String) ((Button) v).getText();
+
+        if (strTemp.endsWith(".") & input.equals(".")){
+            input = "";
+        }
 
         if (subReset){
             subText = "";
